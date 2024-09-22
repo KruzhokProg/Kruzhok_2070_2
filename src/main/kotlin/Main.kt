@@ -50,20 +50,22 @@ fun main() {
 //    print(a5)
     // zara
     //
-    var x1: Char = 'z'
-    var y1: Char = 'a'
-    var z1: Char = 'r'
-    var w1: Char = 'a'
-
-    var shift = -3
-    var x2: Char = ((x1.toInt() - 97 + shift) % 26 + 97).toChar()
-    var y2: Char = ((y1.toInt() - 97 + shift) % 26 + 97).toChar()
-    var z2: Char = ((z1.toInt() - 97 + shift) % 26 + 97).toChar()
-    var w2: Char = ((w1.toInt() - 97 + shift) % 26 + 97).toChar()
-    print(x2)
-    print(y2)
-    print(z2)
-    print(w2)
+//    var x1: Char = 'z'
+//    var y1: Char = 'a'
+//    var z1: Char = 'r'
+//    var w1: Char = 'a'
+//
+//    var shift = -3
+//    var x2: Char = ((x1.toInt() - 97 + shift + 26) % 26 + 97).toChar()
+//    var y2: Char = ((y1.toInt() - 97 + shift + 26) % 26 + 97).toChar()
+//    var z2: Char = ((z1.toInt() - 97 + shift + 26) % 26 + 97).toChar()
+//    var w2: Char = ((w1.toInt() - 97 + shift + 26) % 26 + 97).toChar()
+//    print(x2)
+//    print(y2)
+//    print(z2)
+//    print(w2)
     // ДЗ: Дописать программу шифра Цезаря для отрицательных шагов
     // когда s = -1,-2,... a -> z, y
+
+
 }
