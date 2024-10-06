@@ -43,16 +43,16 @@ package org.example
 
 //последовательность Фиббоначи
 //1 1 2 3 5 8 13 ...
-fun main() {
-    var v1 = 1
-    var v2 = 1
-    var next = 2
-    var n =readln().toInt()
-    for (i in 1..n) {
-        print("${v2*1.0/v1} ")
-        v1 = v2
-        v2 = next
-        next = v1 + v2
-    }
-}
+//fun main() {
+//    var v1 = 1
+//    var v2 = 1
+//    var next = 2
+//    var n =readln().toInt()
+//    for (i in 1..n) {
+//        print("${v2*1.0/v1} ")
+//        v1 = v2
+//        v2 = next
+//        next = v1 + v2
+//    }
+//}
 // 1 1 1 3 5 9 ...
