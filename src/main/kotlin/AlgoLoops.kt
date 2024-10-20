@@ -253,19 +253,19 @@ package org.example
 //53 -> 159 + 1 = 160
 //160 / 2 = 80
 //80 * 3 + 1 =
-fun main() {
-    var x = readln().toInt()
-    var count = 0
-    while (x != 1) {
-        if (x % 2 == 0) {
-            x = x / 2
-        } else {
-            x = 3 * x + 1
-        }
-        count++
-    }
-    println(count)
-}
+//fun main() {
+//    var x = readln().toInt()
+//    var count = 0
+//    while (x != 1) {
+//        if (x % 2 == 0) {
+//            x = x / 2
+//        } else {
+//            x = 3 * x + 1
+//        }
+//        count++
+//    }
+//    println(count)
+//}
 
 // совершенные числа: 26 -> 1, 2, 13
 // Найти все совершенные числа до 1000
