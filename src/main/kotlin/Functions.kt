@@ -29,8 +29,8 @@ fun distance(x1: Double, y1: Double, x2: Double, y2: Double): Double {
     return Math.sqrt((x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y1))
 }
 
-fun checkBelongPointToCircle(x: Double, y: Double, r: Double = 1.0): Boolean {
-    return distance(0.0, 0.0, x, y) <= r
+fun checkBelongPointToCircle(x: Double, y: Double, r: Double = 1.0, shiftY: Double = 0.0, shiftX: Double = 0.0): Boolean {
+    return distance(shiftX, shiftY, x, y) <= r
 }
 
 fun checkBelongPointToRhomb(x: Double, y: Double): Boolean {
@@ -48,6 +48,29 @@ fun checkBelongPointToArea2(x: Double, y: Double): Boolean {
 fun checkBelongPointToArea3(x: Double, y: Double): Boolean {
     return (checkBelongPointToCircle(x, y) && y >= 0) ||
             (checkBelongPointToRhomb(x, y) && y <= 0)
+}
+
+fun checkBelongPointToArea4(x: Double, y: Double): Boolean {
+//    return (x >= 0 && y >= 0 && checkBelongPointToCircle(x, y) && !checkBelongPointToRhomb(x, y))
+//            || ( x < 0 && y < 0 && checkBelongPointToCircle(x, y) && !checkBelongPointToRhomb(x, y))
+//    return checkBelongPointToCircle(x, y) && !checkBelongPointToRhomb(x, y)
+//            && (x >= 0 && y >= 0 || x < 0 && y < 0)
+    return checkBelongPointToCircle(x, y) && !checkBelongPointToRhomb(x, y) && x*y >= 0
+}
+
+fun checkBelongPointToArea5(x: Double, y: Double): Boolean {
+//    return (x <=0 && y >= 0 && checkBelongPointToCircle(x, y, shiftY = 0.5) && checkBelongPointToRhomb(x, y) ||
+//            x >= 0 && y < 0 && !checkBelongPointToCircle(x, y, shiftY = 0.5) && checkBelongPointToRhomb(x, y) )
+    return checkBelongPointToRhomb(x, y) && (x <=0 && y >= 0 && checkBelongPointToCircle(x, y, shiftY = 0.5) ||
+            x >= 0 && y < 0 && !checkBelongPointToCircle(x, y, shiftY = 0.5) )
+}
+
+fun checkBelongPointToArea6(x: Double, y: Double): Boolean {
+    return ( x <= 0 && y >= 0 && checkBelongPointToCircle(x, y, shiftY = 0.5, shiftX = 0.5)
+            && !checkBelongPointToRhomb(x, y) )
+            || (x >= 0 && y <= 0 &&
+            (!checkBelongPointToCircle(x, y, shiftY = 0.5, shiftX = 0.5) && checkBelongPointToRhomb(x, y)
+            || checkBelongPointToCircle(x, y, shiftY = 0.5, shiftX = 0.5) && !checkBelongPointToRhomb(x, y)) )
 }
 
 fun main() {
