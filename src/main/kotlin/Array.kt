@@ -1,6 +1,7 @@
 package org.example
 
 import kotlin.math.abs
+import kotlin.math.max
 import kotlin.math.sqrt
 
 fun main() {
@@ -226,9 +227,48 @@ fun main() {
 //    val max = sortedUnique[lastIndex]
 //    val predmax = sortedUnique[lastIndex - 1]
 //    println("$max $predmax")
+
+    // 1. Найти в массиве самую длинную неубывающую подпоследовательность
+//    val numbers = arrayOf(1000, 400, 1000, 1000, 1500, 9, 40, 8)
+//    val lastIndex = numbers.size - 1
+//    var count = 1
+//    var maxCount = 0
+//    for (i in 0..<lastIndex) {
+//        if (numbers[i+1] >= numbers[i]) {
+//            count += 1
+//        } else {
+//            maxCount = max(maxCount, count)
+//            count = 1
+//        }
+//    }
+//    println(maxCount)
+
+//    Найти индексы двух элементов, которые дают нужную сумму
+//    [1, 40, 3, -5, 0, 6, 12]
+//    target = 3
+//    ответ: [2, 4]
+    val numbers = arrayOf(1000, 400, 100, 1, 1500, 9, 40, 8)
+    val target = 10
+    val sortedNumbers = numbers.sorted()
+    println(sortedNumbers.joinToString(separator = " "))
+    var l = 0
+    var r = sortedNumbers.size - 1
+    while (l < r) {
+        if (sortedNumbers[l] + sortedNumbers[r] < target) {
+            l++
+        } else if (sortedNumbers[l] + sortedNumbers[r] > target) {
+            r--
+        } else {
+            val firstIndex = numbers.indexOf(sortedNumbers[l])
+            val secondIndex = numbers.indexOf(sortedNumbers[r])
+            println("$firstIndex $secondIndex")
+            return
+        }
+    }
+    println("Нет такой пары чисел")
 }
 
-// 1. Найти в массиве самую длинную возрастающую подпоследовательность
-//и вывести количество элементов в ней
-//1, 2, 3, 4, 0, 40, 50, 60, 70
-// 2. Найти индексы элементов, которые дают нужную сумму
+// ДЗ
+// 1. Найти индексы трёх элементов, которые дают нужную сумму
+// 2. Найти самую длинную подпоследовательность возрастания-убывания чисел и вывести количество элементов в ней
+[1, 2, 3, 4, 5, 3, 2, 1]
