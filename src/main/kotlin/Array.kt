@@ -122,20 +122,113 @@ fun main() {
 //    numbers[iMin] = tmp
 //    numbers.forEach { print("$it ") }
     // посчитать сумму между минимальным и максимальными элементами
-    val numbers = arrayOf(1000, 400, -8, 9, -160, -56)
-    var iMax = numbers.indexOf(numbers.max())
-    var iMin = numbers.indexOf(numbers.min())
-    if (iMin > iMax) {
-        val tmp = iMax
-        iMax = iMin
-        iMin = tmp
-    }
-    val res = numbers.filterIndexed { index, number ->
-        index in (iMin + 1)..<iMax
-    }.sum()
-    println(res)
+//    val numbers = arrayOf(1000, 400, -8, 9, -160, -56)
+//    var iMax = numbers.indexOf(numbers.max())
+//    var iMin = numbers.indexOf(numbers.min())
+//    if (iMin > iMax) {
+//        val tmp = iMax
+//        iMax = iMin
+//        iMin = tmp
+//    }
+//    val res = numbers.filterIndexed { index, number ->
+//        index in (iMin + 1)..<iMax
+//    }.sum()
+//    println(res)
 //    ДЗ:
 //    1. Есть ли в массиве одинаковые числа
 //    2. Удалить повторяющиеся элементы из массива
 //    3. Найти два максимальных элемента массива
+
+    // Перебор(примитивный подход)
+//    val numbers = arrayOf(1000, 400, -8, 9, 400, -56)
+//    val lastIndex = numbers.size - 1
+//    for (i in 0..lastIndex) {
+//        val elementToCheck = numbers[i]
+//        for (j in i+1..lastIndex) {
+//            if (elementToCheck == numbers[j]) {
+//                println("Есть дубликат: $elementToCheck")
+//                return
+//            }
+//        }
+//    }
+//    println("Нет дубликатов")
+//    1 n-1
+//    2 n-2
+//    3 n-3
+//    ...
+//    n-1 1
+//    (n-1) + (n-2) + (n-3) + ... + 1
+//    1 + 2 + 3 + ... + (n-1) = (1 + n - 1)/2*(n-1) = n*(n-1) / 2 -> n*n/2 -> n*n -> n^2
+//    1 + 2 + 3 + ... + 10 = (a1 + an)/2*n = (1 + 10) / 2 * 10 = 55
+//    1 + 2 + 3 + ... + 115 = (a1 + an)/2*n = (1 + 115) / 2 * 115 = 6670
+    // Оптимизация
+//    val numbers = arrayOf(1000, 400, -8, 9, 40, -56)
+//    val lastIndex = numbers.size - 1
+//    numbers.sort() // in-place n * log2(n)
+    //    n^2  >>  n * log2(n) + n
+//  100   100^2    100*7
+//  1000  1000^2   1000*10
+//    println(numbers.joinToString(separator = " "))
+//    for (i in 0..<lastIndex) {
+//        if (numbers[i] == numbers[i+1]) {
+//            println("Есть дубликат ${numbers[i]}")
+//            return
+//        }
+//    }
+//    println("Нет дубликатов")
+
+//    2. Удалить повторяющиеся элементы из массива
+//    val numbers = arrayOf(1000, 400, 8, 9, 400, 8)
+//    val lastIndex = numbers.size - 1
+//    for (i in 0..lastIndex) {
+//        val elementToCheck = numbers[i]
+//        for (j in i+1..lastIndex) {
+//            if (elementToCheck == numbers[j]) {
+//                numbers[i] = -1
+//                numbers[j] = -1
+//            }
+//        }
+//    }
+//    println(numbers.joinToString(separator = " "))
+//    val res = numbers.filter { it != -1}
+//    println(res.joinToString(separator = " "))
+
+    //    2. Удалить повторяющиеся элементы из массива
+//    val numbers = arrayOf(1000, 400, 8, 9, 400, 8)
+//    val dublicates = Array(numbers.size){ "-" }
+//    var freeIndex = 0
+//    val lastIndex = numbers.size - 1
+//    for (i in 0..lastIndex) {
+//        val elementToCheck = numbers[i]
+//        for (j in i+1..lastIndex) {
+//            if (elementToCheck == numbers[j]) {
+//                dublicates[freeIndex] = elementToCheck.toString()
+//                freeIndex++
+//            }
+//        }
+//    }
+//    println(dublicates.joinToString(separator = " "))
+//    val res = numbers.filter { it.toString() !in dublicates }
+//    println(res.joinToString(separator = " "))
+//    val res2 = res + dublicates.filter { it != "-" }.map { it.toInt() }
+//    println(res2.joinToString(separator = " "))
+
+//    2. Удалить повторяющиеся элементы из массива (Отимизация)
+//    val numbers = arrayOf(1000, 400, 8, 9, 400, 8)
+//    val unique = numbers.toSet()
+//    println(unique)
+
+//    3. Найти два максимальных элемента массива
+//    val numbers = arrayOf(1000, 400, 1000, 9, 40, 8)
+//    val unique = numbers.toSet()
+//    val lastIndex = unique.size - 1
+//    val sortedUnique = unique.sorted()
+//    val max = sortedUnique[lastIndex]
+//    val predmax = sortedUnique[lastIndex - 1]
+//    println("$max $predmax")
 }
+
+// 1. Найти в массиве самую длинную возрастающую подпоследовательность
+//и вывести количество элементов в ней
+//1, 2, 3, 4, 0, 40, 50, 60, 70
+// 2. Найти индексы элементов, которые дают нужную сумму
