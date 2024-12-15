@@ -247,26 +247,26 @@ fun main() {
 //    [1, 40, 3, -5, 0, 6, 12]
 //    target = 3
 //    ответ: [2, 4]
-    val numbers = arrayOf(1000, 400, 100, 1, 1500, 9, 40, 8)
-    val target = 10
-    val sortedNumbers = numbers.sorted()
-    println(sortedNumbers.joinToString(separator = " "))
-    var l = 0
-    var r = sortedNumbers.size - 1
-    while (l < r) {
-        if (sortedNumbers[l] + sortedNumbers[r] < target) {
-            l++
-        } else if (sortedNumbers[l] + sortedNumbers[r] > target) {
-            r--
-        } else {
-            val firstIndex = numbers.indexOf(sortedNumbers[l])
-            val secondIndex = numbers.indexOf(sortedNumbers[r])
-            println("$firstIndex $secondIndex")
-            return
-        }
-    }
-    println("Нет такой пары чисел")
-}
+//    val numbers = arrayOf(1000, 400, 100, 1, 1500, 9, 40, 8)
+//    val target = 10
+//    val sortedNumbers = numbers.sorted()
+//    println(sortedNumbers.joinToString(separator = " "))
+//    var l = 0
+//    var r = sortedNumbers.size - 1
+//    while (l < r) {
+//        if (sortedNumbers[l] + sortedNumbers[r] < target) {
+//            l++
+//        } else if (sortedNumbers[l] + sortedNumbers[r] > target) {
+//            r--
+//        } else {
+//            val firstIndex = numbers.indexOf(sortedNumbers[l])
+//            val secondIndex = numbers.indexOf(sortedNumbers[r])
+//            println("$firstIndex $secondIndex")
+//            return
+//        }
+//    }
+//    println("Нет такой пары чисел")
+//}
 
 // ДЗ
 // 1. Найти индексы трёх элементов, которые дают нужную сумму
@@ -299,6 +299,26 @@ fun main() {
 //    Incrementing by one gives 9 + 1 = 10.
 //    Thus, the result should be [1,0].
 
+//        val input = arrayOf(9, 9)
+//        val number = 8
+//        val output = Array(input.size + 1) { 0 }
+//        val lastIndex = input.size - 1
+//        var carry = 0
+//        var sum = number
+//        var i = lastIndex
+//        while (i >= 0) {
+//            sum += input[i] + carry
+//            output[i + 1] = sum % 10
+//            carry = sum / 10
+//            sum = 0
+//            i--
+//        }
+//        output[i + 1] = carry
+//        println(output.joinToString(separator = " "))
+//    }
+
+//ДЗ: [1, 9, 9] + [9, 9, 8] -> [1,1,9,7]
+
 //    2. Search Insert Position
 //    Given a sorted array of distinct integers and a target value, return the index if the target is found.
 //    If not, return the index where it would be if it were inserted in order.
@@ -315,4 +335,6 @@ fun main() {
 //
 //    Input: nums = [1,3,5,6], target = 7
 //    Output: 4
-
+// Бинарный поиск*
+//[1, 3, 5, 6, 9, 10, 15]
+//  target =  13
