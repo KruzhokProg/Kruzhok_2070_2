@@ -271,4 +271,48 @@ fun main() {
 // ДЗ
 // 1. Найти индексы трёх элементов, которые дают нужную сумму
 // 2. Найти самую длинную подпоследовательность возрастания-убывания чисел и вывести количество элементов в ней
-[1, 2, 3, 4, 5, 3, 2, 1]
+//[1, 2, 3, 4, 5, 3, 2, 1]
+
+//    ДЗ Найти три числа в массиве = target
+
+//    1. Plus One
+//    You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer.
+//    The digits are ordered from most significant to least significant in left-to-right order.
+//    The large integer does not contain any leading 0's.
+//    Increment the large integer by one and return the resulting array of digits.
+//        16 байт -> 10^38
+//        38*4 = 152 бит -> 19 байт
+//        value = 1..10^38
+//        n = 1000
+//        1000*16 = 16000 байт
+//        500*19 + 500*1 = 10000 байт
+//        500*10 + 500*1 = 5000
+//    Input: digits = [1,2,3]
+//    Output: [1,2,4]
+//    Explanation: The array represents the integer 123.
+//    Incrementing by one gives 123 + 1 = 124.
+//    Thus, the result should be [1,2,4].
+
+//    Input: digits = [9]
+//    Output: [1,0]
+//    Explanation: The array represents the integer 9.
+//    Incrementing by one gives 9 + 1 = 10.
+//    Thus, the result should be [1,0].
+
+//    2. Search Insert Position
+//    Given a sorted array of distinct integers and a target value, return the index if the target is found.
+//    If not, return the index where it would be if it were inserted in order.
+//    You must write an algorithm with O(log n) runtime complexity.
+//    Example 1:
+//
+//    Input: nums = [1,3,5,6], target = 5
+//    Output: 2
+//    Example 2:
+//
+//    Input: nums = [1,3,5,6], target = 2
+//    Output: 1
+//    Example 3:
+//
+//    Input: nums = [1,3,5,6], target = 7
+//    Output: 4
+
