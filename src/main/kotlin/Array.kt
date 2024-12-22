@@ -318,38 +318,77 @@ fun main() {
 //        println(output.joinToString(separator = " "))
 
     // Версия Артемия
-        val input = arrayOf(9, 9)
-        var number = 0
-        var number2 = 0
-        val number1 = arrayOf(9, 9, 1)
-        for (q in 0..number1.size - 1) {
-            for (w in number1.size - 1 - q downTo 0) {
-                if (number2 == 0) {
-                    number2 = number1[q]
-                } else {
-                    number2 = number2 * 10
-                }
-            }
-            number = number2 + number
-            number2 = 0
-        }
-        val output = Array(input.size + 1) { 0 }
-        val lastIndex = input.size - 1
-        var carry = 0
-        var sum = number
-        var i = lastIndex
-        while (i >= 0) {
-            sum += input[i] + carry
-            output[i + 1] = sum % 10
-            carry = sum / 10
-            sum = 0
-            i--
-        }
-        output[i + 1] = carry
-        println(output.joinToString(separator = " "))
+//        val input = arrayOf(9, 9)
+//        var number = 0
+//        var number2 = 0
+//
+//        val number1 = arrayOf(9, 9)
+//        for (q in 0..number1.size - 1) {
+//            for (w in number1.size - 1 - q downTo 0) {
+//                if (number2 == 0) {
+//                    number2 = number1[q]
+//                } else {
+//                    number2 = number2 * 10
+//                }
+//            }
+//            number = number2 + number
+//            number2 = 0
+//        }
+//        val output = Array(input.size + 1) { 0 }
+//        val lastIndex = input.size - 1
+//        var carry = 0
+//        var sum = number
+//        var i = lastIndex
+//        while (i >= 0) {
+//            sum += input[i] + carry
+//            output[i + 1] = sum % 10
+//            carry = sum / 10
+//            sum = 0
+//            i--
+//        }
+//        output[i + 1] = carry
+//        println(output.joinToString(separator = " "))
 
 
-    }
+    // рабочая версия
+//    val input1 = arrayOf(9, 9, 9)
+//    val input2 = arrayOf(1, 1)
+//    val maxArray: Array<Int>
+//    val minArray: Array<Int>
+//    val maxArraySize: Int
+//    val minArraySize: Int
+//    if (input1.size > input2.size) {
+//        maxArray = input1
+//        minArray = input2
+//        maxArraySize = input1.size
+//        minArraySize = input2.size
+//    } else {
+//        maxArray = input2
+//        minArray = input1
+//        maxArraySize = input2.size
+//        minArraySize = input1.size
+//    }
+//    val output = Array(maxArraySize + 1) { 0 }
+//    val lastMaxIndex = maxArraySize - 1
+//    val lastMinIndex = minArraySize - 1
+//    var carry = 0
+//    var sum = 0
+//    var i = lastMaxIndex
+//    var j = lastMinIndex
+//    while (j >= 0 || (i >= 0 && carry != 0)) {
+//        if (i >= 0 && j >= 0) {
+//            sum = maxArray[i] + minArray[j] + carry
+//        } else {
+//            sum = maxArray[i] + carry
+//        }
+//        output[i + 1] = sum % 10
+//        carry = sum / 10
+//        i--
+//        j--
+//    }
+//    output[i + 1] = carry
+//    println(output.joinToString(separator = " "))
+//    }
 
 //ДЗ: [1, 9, 9] + [9, 9, 8] -> [1,1,9,7]
 
@@ -372,3 +411,40 @@ fun main() {
 // Бинарный поиск*
 //[1, 3, 5, 6, 9, 10, 15]
 //  target =  13
+
+    val nums = arrayOf(1, 2, 3, 4, 5, 7, 8, 9, 10)
+    val target = 6
+    var left = 0
+    var right = nums.size - 1
+    var indexToFind = -1
+    while (left < right) {
+        val center = (left + right)/2
+        val pivot = nums[center]
+        if (target > pivot) {
+            left = center + 1
+        } else if (target < pivot) {
+            right = center - 1
+        } else {
+            indexToFind = left
+            break
+        }
+    }
+    if (indexToFind != -1) {
+        println(indexToFind)
+    } else {
+        println(right)
+    }
+
+
+//    var iTarget = -1
+//    nums.forEachIndexed { index, num ->
+//        if (num >= target) {
+//            iTarget = index - 1
+//        }
+//    }
+//    if (iTarget == -1) {
+//        println(nums.size - 1)
+//    } else {
+//        println(iTarget)
+//    }
+}
