@@ -299,23 +299,23 @@ fun main() {
 //    Incrementing by one gives 9 + 1 = 10.
 //    Thus, the result should be [1,0].
 
-//        val input = arrayOf(9, 9)
-//        val number = 8
-//        val output = Array(input.size + 1) { 0 }
-//        val lastIndex = input.size - 1
-//        var carry = 0
-//        var sum = number
-//        var i = lastIndex
-//        while (i >= 0) {
-//            sum += input[i] + carry
-//            output[i + 1] = sum % 10
-//            carry = sum / 10
-//            sum = 0
-//            i--
-//        }
-//        output[i + 1] = carry
-//        println(output.joinToString(separator = " "))
-//    }
+        val input = arrayOf(9, 9)
+        val number = 8
+        val output = Array(input.size + 1) { 0 }
+        val lastIndex = input.size - 1
+        var carry = 0
+        var sum = number
+        var i = lastIndex
+        while (i >= 0) {
+            sum += input[i] + carry
+            output[i + 1] = sum % 10
+            carry = sum / 10
+            sum = 0
+            i--
+        }
+        output[i + 1] = carry
+        println(output.joinToString(separator = " "))
+    }
 
 //ДЗ: [1, 9, 9] + [9, 9, 8] -> [1,1,9,7]
 
