@@ -1,71 +1,67 @@
 package org.example
 
+//class Computer {
+//    var formFactor1: String? = null
+//    var color1: String? = null
+//    var ssd1: Int? = null
+//    var processor1: String? = null
+//    var isRemotable: Boolean? = null
+//}
+
+
+
 fun main() {
-    // x = 2
-    // y = 3
-//    var x: Int = 2
-//    var y: Int = 3
-////    var z: Int
-////    x,y = y,x
-//    print(x)
-//    print(y)
 
-//    z = x
-//    x = y
-//    y = z
-//    x = x + y // 5
-//    y = x - y // 5 - 3 = 2
-//    x = x - y // 5 - 2 = 3
-
-//    println()
-//    print(x)
-//    print(y)
-    // x = 3
-    // y = 2
-//    ---------------------
-//    +, -, *, /, %
-//    var x = 1234
-//    var a1 = x / 1000
-//    var a2 = (x / 100) % 10
-//    var a3 = (x % 100) / 10
-//    var a4 = x % 10
-//    println(a1)
-//    println(a2)
-//    println(a3)
-//    println(a4)
-//    var res: Int = a4 * 1000 + a3 * 100 + a2 * 10 + a1
-//    println(res)
-//    --------------------
-//    var x = readln().toInt()
-//    var a1 = (x / 81) % 3
-//    var a2 = (x / 27) % 3
-//    var a3 = (x / 9) % 3
-//    var a4 = (x / 3) % 3
-//    var a5 = x % 3
+//    val formFactor1: String = "Monoblock"
+//    val color1: String = "Black"
+//    val ssd1 = 1024
+//    val processor1 = "Intel core i5"
 //
-//    print(a1)
-//    print(a2)
-//    print(a3)
-//    print(a4)
-//    print(a5)
-    // zara
-    //
-//    var x1: Char = 'z'
-//    var y1: Char = 'a'
-//    var z1: Char = 'r'
-//    var w1: Char = 'a'
+//    val formFactor2: String = "Monoblock"
+//    val color2: String = "Black"
+//    val ssd2 = 1024
+//    val processor2 = "Intel core i5"
 //
-//    var shift = -3
-//    var x2: Char = ((x1.toInt() - 97 + shift + 26) % 26 + 97).toChar()
-//    var y2: Char = ((y1.toInt() - 97 + shift + 26) % 26 + 97).toChar()
-//    var z2: Char = ((z1.toInt() - 97 + shift + 26) % 26 + 97).toChar()
-//    var w2: Char = ((w1.toInt() - 97 + shift + 26) % 26 + 97).toChar()
-//    print(x2)
-//    print(y2)
-//    print(z2)
-//    print(w2)
-    // ДЗ: Дописать программу шифра Цезаря для отрицательных шагов
-    // когда s = -1,-2,... a -> z, y
+//    val computer1: Array<Any> = arrayOf(formFactor1, color1, ssd1, processor1)
+//    val computer2: Array<Any> = arrayOf(formFactor2, color2, ssd2, processor2)
+
+//    for (i in 0..<computer1.size) {
+//        computer1[i] =
+//    }
+
+//    val computer1: Computer = Computer()
+//    computer1.color1 = "Black"
+//    computer1.processor1 = "Intel core i5"
+//    computer1.ssd1 = 1024
+//    computer1.formFactor1 = "Monoblock"
+//    computer1.isRemotable = false
+//
+//    val computer2: Computer = Computer()
+//    computer1.color1 = "White"
+//    computer1.processor1 = "Intel core i5"
+//    computer1.ssd1 = 1024
+//    computer1.formFactor1 = "Monoblock"
+//    computer1.isRemotable = false
+
+    val computer1: Computer = Computer(
+        isRemotable = false,
+        formFactor = "Monoblock",
+        color = "Black",
+        ssd = 1024,
+        processor = "Intel core i5",
+    )
+    computer1.power()
+    computer1.scenario1()
+//    computer1.testDelay()
+//    computer1.show()
+//    computer1.downloadFile(50)
+//    computer1.show()
+//    computer1.changeSsd(2048)
+//    computer1.show()
+//    computer1.displayState()
+//    computer1.power()
+//    computer1.displayState()
 
 
+//    val computers = arrayOf(computer1, computer2)
 }
