@@ -50,8 +50,13 @@ fun main() {
         ssd = 1024,
         processor = "Intel core i5",
     )
+    val smartphone1 = Smartphone()
     computer1.power()
     computer1.scenario1()
+    val devices = arrayOf(computer1, smartphone1)
+//    devices.forEach { device ->
+//        device.
+//    }
 //    computer1.testDelay()
 //    computer1.show()
 //    computer1.downloadFile(50)

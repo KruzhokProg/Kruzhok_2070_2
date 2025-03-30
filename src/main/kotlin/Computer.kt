@@ -9,6 +9,13 @@ package org.example
  *
  * @author Иванов Иван
  */
+
+class Smartphone() {
+    fun power() {
+
+    }
+}
+
 class Computer(
     private var formFactor: String,
     private var color: String,
@@ -24,6 +31,10 @@ class Computer(
      */
     fun power() {
         isTurnedOn = !isTurnedOn
+    }
+
+    fun downloadFile(url: String) {
+
     }
 
     fun changeSsd(newSize: Int) {
